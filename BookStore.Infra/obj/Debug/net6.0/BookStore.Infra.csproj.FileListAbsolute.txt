@@ -1,0 +1,17 @@
+C:\Users\user\source\repos\BookStore.Infra\bin\Debug\net6.0\BookStore.Infra.deps.json
+C:\Users\user\source\repos\BookStore.Infra\bin\Debug\net6.0\BookStore.Infra.runtimeconfig.json
+C:\Users\user\source\repos\BookStore.Infra\bin\Debug\net6.0\BookStore.Infra.dll
+C:\Users\user\source\repos\BookStore.Infra\bin\Debug\net6.0\BookStore.Infra.pdb
+C:\Users\user\source\repos\BookStore.Infra\bin\Debug\net6.0\BookStore.Core.dll
+C:\Users\user\source\repos\BookStore.Infra\bin\Debug\net6.0\BookStore.Core.pdb
+C:\Users\user\source\repos\BookStore.Infra\obj\Debug\net6.0\BookStore.Infra.csproj.AssemblyReference.cache
+C:\Users\user\source\repos\BookStore.Infra\obj\Debug\net6.0\BookStore.Infra.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\source\repos\BookStore.Infra\obj\Debug\net6.0\BookStore.Infra.AssemblyInfoInputs.cache
+C:\Users\user\source\repos\BookStore.Infra\obj\Debug\net6.0\BookStore.Infra.AssemblyInfo.cs
+C:\Users\user\source\repos\BookStore.Infra\obj\Debug\net6.0\BookStore.Infra.csproj.CoreCompileInputs.cache
+C:\Users\user\source\repos\BookStore.Infra\obj\Debug\net6.0\BookStore.Infra.csproj.CopyComplete
+C:\Users\user\source\repos\BookStore.Infra\obj\Debug\net6.0\BookStore.Infra.dll
+C:\Users\user\source\repos\BookStore.Infra\obj\Debug\net6.0\refint\BookStore.Infra.dll
+C:\Users\user\source\repos\BookStore.Infra\obj\Debug\net6.0\BookStore.Infra.pdb
+C:\Users\user\source\repos\BookStore.Infra\obj\Debug\net6.0\BookStore.Infra.genruntimeconfig.cache
+C:\Users\user\source\repos\BookStore.Infra\obj\Debug\net6.0\ref\BookStore.Infra.dll

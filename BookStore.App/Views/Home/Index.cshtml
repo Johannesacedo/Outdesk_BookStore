@@ -1,0 +1,98 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<div class="container">
+    <div class="row">
+        <div class="col-4">
+            <div class="input-group">
+                <input type="text" class="form-control" id="txtSearch" placeholder="Book Name" />
+                <button class="btn btn-primary" onclick="search()">Search</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<table class="table" id="tblBooks">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Book Name</th>
+            <th scope="col">-</th>
+        </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+<script type="text/javascript">
+    initialize();
+    function initialize() {
+        $("#tblBooks tbody tr").remove();
+        $.ajax({
+            url: 'https://localhost:7002/api/bookstore/books?pageindex=1&pagesize=10&sort=nameasc&search=',
+            type: 'GET',
+            contentType: 'application/json; charset=UTF-8',
+            success: function (response) {
+                console.log(response);
+
+                var tbody = $('#tblBooks').children('tbody');
+                var table = tbody.length ? tbody : $('#tblBooks');
+                response.forEach(function (item) {
+                    table.append(`<tr><td>${item.name}</td><td><button class="btn btn-success" id="btnReserve" value="${item.id}">Reserve</button></td></tr>`);
+                });
+
+            },
+            error: function (err) {
+                console.log(err);
+            }
+        });
+    }
+
+    function search() {
+        $("#tblBooks tbody tr").remove();
+        var searchVal = $("#txtSearch").val();
+        $.ajax({
+            url: `https://localhost:7002/api/bookstore/books?pageindex=1&pagesize=10&sort=nameasc&search=${searchVal}`,
+            type: 'GET',
+            contentType: 'application/json; charset=UTF-8',
+            success: function (response) {
+
+                var tbody = $('#tblBooks').children('tbody');
+                var table = tbody.length ? tbody : $('#tblBooks');
+                response.forEach(function (item) {
+                    table.append(`<tr><td>${item.name}</td><td><button class="btn btn-success" id="btnReserve" value="${item.id}">Reserve</button></td></tr>`);
+                });
+
+            },
+            error: function (err) {
+                console.log(err);
+            }
+        });
+    }
+
+    $(function () {
+        $(document).on("click", '#btnReserve', function () {
+            var bookId = $(this).attr('value');
+
+            var reserveData = {
+                bookId: bookId
+            };
+
+            $.ajax({
+                url: `https://localhost:7002/api/bookstore/reserve`,
+                type: 'POST',
+                    data: JSON.stringify(reserveData),
+                dataType: "json",
+                contentType: 'application/json; charset=UTF-8',
+                success: function (response) {
+                    alert("Success!");
+                },
+                error: function (err) {
+                    console.log(err);
+                    alert(err.responseJSON.message);
+                }
+            });
+        });
+    });
+</script>
